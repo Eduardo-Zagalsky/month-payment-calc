@@ -42,6 +42,10 @@ function update() {
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
+  let i = (values.rate / 100) / 12;
+  let n = (values.term * 12);
+  const monthlypayment = (values.amount * i) / (1 - (Math.pow((1 + i), -n)));
+  return monthlypayment;
 }
 
 // Given a string representing the monthly payment value,
