@@ -1,8 +1,8 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById("calc-form");
   if (form) {
     setupIntialValues();
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
       update();
     });
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function() {
 function getCurrentUIValues() {
   return {
     amount: +(document.getElementById("loan-amount").value),
-    years: +(document.getElementById("loan-years").value),
+    term: +(document.getElementById("loan-term").value),
     rate: +(document.getElementById("loan-rate").value),
   }
 }
@@ -21,6 +21,13 @@ function getCurrentUIValues() {
 // Put some default values in the inputs
 // Call a function to calculate the current monthly payment
 function setupIntialValues() {
+  const values = { amount: 9000, term: 5, rate: 12 };
+  const amountUI = document.getElementById("loan-amount");
+  amountUI.value = values.amount;
+  const termUI = document.getElementById("loan-term");
+  termUI.value = values.term;
+  const rateUI = document.getElementById("loan-rate");
+  rateUI.value = values.rate;
 }
 
 // Get the current values from the UI
@@ -28,7 +35,7 @@ function setupIntialValues() {
 function update() {
 }
 
-// Given an object of values (a value has amount, years and rate ),
+// Given an object of values (a value has amount, term and rate ),
 // calculate the monthly payment.  The output should be a string
 // that always has 2 decimal places.
 function calculateMonthlyPayment(values) {
