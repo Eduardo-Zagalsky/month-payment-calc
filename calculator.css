@@ -45,7 +45,6 @@ header > h1 {
 
 .calc-container > form > label {
   padding: 10px;
-  padding-left: 0px;
   font-size: 1.3em;
 }
 
@@ -78,6 +77,8 @@ input {
 
 .calc-container h3 {
   font-size: 1.5em;
+  margin-left: 15px;
+  margin-top: 20px;
 }
 
 #calc-submit {
