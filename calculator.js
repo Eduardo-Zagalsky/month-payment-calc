@@ -45,7 +45,7 @@ function calculateMonthlyPayment(values) {
   let i = (values.rate / 100) / 12;
   let n = Math.floor(values.term * 12);
   const monthlypayment = (values.amount * i) / (1 - (Math.pow((1 + i), -n)));
-  return monthlypayment;
+  return monthlypayment.toFixed(2);
 }
 
 // Given a string representing the monthly payment value,
