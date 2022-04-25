@@ -28,6 +28,7 @@ function setupIntialValues() {
   termUI.value = values.term;
   const rateUI = document.getElementById("loan-rate");
   rateUI.value = values.rate;
+  update();
 }
 
 // Get the current values from the UI
